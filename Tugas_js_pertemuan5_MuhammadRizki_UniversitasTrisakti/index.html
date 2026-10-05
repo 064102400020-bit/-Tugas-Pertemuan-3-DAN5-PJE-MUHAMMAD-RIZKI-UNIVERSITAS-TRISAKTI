@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Manajemen Produk Toko Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Manajemen Produk</h1>
+            <p>Kelola produk toko online dengan mudah</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="dashboard">
+            <!-- Bagian Ringkasan -->
+            <section class="summary-card">
+                <h2>Ringkasan</h2>
+                <p>Total Produk: <span id="total-products">0</span></p>
+            </section>
+
+            <!-- Form Tambah Produk -->
+            <section class="add-product-card">
+                <h2>Tambah Produk Baru</h2>
+                <form id="form-tambah-produk">
+                    <div class="input-group">
+                        <label for="nama-produk">Nama Produk</label>
+                        <input type="text" id="nama-produk" placeholder="Masukkan nama produk" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="harga-produk">Harga (Rp)</label>
+                        <input type="number" id="harga-produk" placeholder="Masukkan harga produk" required min="1">
+                    </div>
+                    <button type="submit" class="btn-primary">Tambah Produk</button>
+                </form>
+                <div id="notifikasi" class="notifikasi hide"></div>
+            </section>
+        </div>
+
+        <!-- Tabel Daftar Produk -->
+        <section class="product-list-section">
+            <div class="section-header">
+                <h2>Daftar Produk</h2>
+                <button id="btn-tampilkan-semua" class="btn-secondary">Tampilkan Semua Produk</button>
+            </div>
+            
+            <div class="table-responsive">
+                <table id="tabel-produk">
+                    <thead>
+                        <tr>
+                            <th>Nomor</th>
+                            <th>ID Produk</th>
+                            <th>Nama Produk</th>
+                            <th>Harga</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-produk">
+                        <!-- Data produk akan dimuat di sini oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="pesan-kosong" class="hide">Daftar produk masih kosong.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
